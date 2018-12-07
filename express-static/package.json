@@ -1,0 +1,14 @@
+{
+  "name": "express-static",
+  "version": "1.0.0",
+  "description": "Generated with Eclipse npm Tools",
+  "main": "express-static.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "Morten Nyhaug",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.4"
+  }
+}
