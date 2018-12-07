@@ -1,0 +1,15 @@
+{
+  "name": "db-connections",
+  "version": "1.0.0",
+  "description": "Generated with Eclipse npm Tools",
+  "main": "db-connections.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "Morten Nyhaug",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "sqlite3": "^4.0.4"
+  }
+}
