@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="jsdtApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Example HTTP calls</title>
+	
+	<!-- Bootstrap and Font-awesome css -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+	
+	<!-- Scripts -->
+	<script src="node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="scripts/application.js"></script>
+</head>
+
+<body ng-controller="mainController">
+	<div class="main container-fluid px-5 pt-3">
+		<div class="row">
+			<div class="col">
+				<h1>Kontrollpanel</h1>
+			</div>
+		</div>
+	
+		<div class="row no-gutters pt-2">
+			<div class="col">
+				<div class="button-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-primary" ng-click="getAll()">Get all messages</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row no-gutters pt-2">
+			<div class="col-auto mr-2">
+				<div class="button-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-primary" ng-click="get(getId)">Get message</button>
+				</div>
+			</div>
+			<div class="col-2 mr-2">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="get-id-label">ID:</span>
+				  </div>
+				  <input type="text" class="form-control" ng-model="getId" aria-label="ID" aria-describedby="get-id-label">
+				</div>
+			</div>
+			<div class="col pt-2">
+				<span>{{fetchedMessage}}</span>
+			</div>
+		</div>
+	
+		<div class="row no-gutters pt-2">
+			<div class="col-auto mr-2">
+				<div class="button-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-success" ng-click="add(addText)">Add message</button>
+				</div>
+			</div>
+			<div class="col">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="add-text-label">Text:</span>
+				  </div>
+				  <input type="text" class="form-control" ng-model="addText" aria-label="Message text" aria-describedby="add-text-label">
+				</div>
+			</div>
+		</div>
+		
+		<div class="row no-gutters pt-2">
+			<div class="col-auto mr-2">
+				<div class="button-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-warning" ng-click="update(updateId, updateText)">Update message</button>
+				</div>
+			</div>
+			<div class="col-2 mr-2">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="update-id-label">ID:</span>
+				  </div>
+				  <input type="text" class="form-control" ng-model="updateId" aria-label="ID" aria-describedby="update-id-label">
+				</div>
+			</div>
+			<div class="col">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="update-text-label">Text:</span>
+				  </div>
+				  <input type="text" class="form-control" ng-model="updateText" aria-label="Message text" aria-describedby="update-text-label">
+				</div>
+			</div>
+		</div>
+		
+		<div class="row no-gutters pt-2">
+			<div class="col-auto mr-2">
+				<div class="button-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-danger" ng-click="remove(removeId)">Delete message</button>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="remove-id-label">ID:</span>
+				  </div>
+				  <input type="text" class="form-control" ng-model="removeId" aria-label="ID" aria-describedby="remove-id-label">
+				</div>
+			</div>
+		</div>
+		
+		<div class="row pt-5">
+			<div class="col">
+				<h1>Meldinger</h1>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Text</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-show="messages.length === 0">
+							<td colspan="2">Ingen meldinger</td>
+						</tr>
+						<tr ng-show="messages.length > 0" ng-repeat="message in messages">
+							<td>{{message.id}}</td>
+							<td>{{message.text}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	
+<!-- 		
+		<div class="row">
+			<div class="col pt-3">
+				<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with buttons and inputs">
+					<div class="button-group mr-2" role="group" aria-label="Button group">
+						<button type="button" class="btn btn-success" onclick="add()">Add</button>
+					</div>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="add-message-label">Text</span>
+					  </div>
+					  <input type="text" class="form-control" placeholder="Message text" aria-label="Message text" aria-describedby="add-message-label">
+					</div>
+				</div>
+			</div>
+		</div>
+ -->		
+	</div>
+</body>
+</html>
