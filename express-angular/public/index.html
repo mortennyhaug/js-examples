@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="jsdtApp">
+
+<head>
+	<title>Demo 01</title>
+	
+	<!-- Bootstrap and Font-awesome css -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+	
+	<!-- Scripts -->
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="scripts/application.js"></script>
+	
+	<style type="text/css">
+		.app-bg-dark {
+			background-color: #6e6e6e;
+			color: #ffffff;
+		}
+		
+		.app-bg-light {
+			background-color: #f4f4f4;
+			color: #505050;
+		}
+		
+		.app-bg-orange {
+			background-color: #ff9900;
+			color: #ffffff;
+		}
+		
+		li:hover {
+			background-color: #ff9900;
+		}
+	</style>
+</head>
+
+<body ng-controller="mainController">
+	<div class="container">
+ 		<nav class="navbar navbar-expand navbar-dark bg-dark">
+			<a class="navbar-brand" href="#/!">Demo 01</a>
+			<ul class="navbar-nav mr-auto fa-2x">
+				<li class="nav-item active"><a class="nav-link" href="#/!"><i class="fa fa-fw fa-home"></i>Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#!about"><i class="fa fa-fw fa-book"></i>About</a></li>
+				<li class="nav-item"><a class="nav-link" href="#!contact"><i class="fa fa-fw fa-comment"></i>Contact</a></li>
+			</ul>
+		</nav>
+		<!-- Main content -->
+		<div class="main">
+			<div class="ng-view"></div>
+		</div>
+	</div>
+</body>
+
+</html>
+

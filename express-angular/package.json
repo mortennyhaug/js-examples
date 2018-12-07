@@ -1,0 +1,23 @@
+{
+  "name": "express-angular",
+  "version": "1.0.0",
+  "description": "Generated with Eclipse npm Tools",
+  "main": "express-angular.js",
+  "scripts": {
+    "clean": "rimraf public/node_modules",
+    "build": "copy-node-modules . ./public",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "bootstrap": "^4.1.3",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "copy-node-modules": "^1.0.8",
+    "express": "^4.16.4"
+  }
+}
