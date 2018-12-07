@@ -1,0 +1,10 @@
+.DS_Store
+.npm
+/node_modules
+/db-connections/node_modules
+/express-angular/node_modules
+/express-angular/public/node_modules
+/express-http/node_modules
+/express-static/node_modules
+/express-webapp/node_modules
+/express-webapp/public/node_modules
