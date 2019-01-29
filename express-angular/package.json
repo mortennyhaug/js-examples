@@ -5,8 +5,12 @@
   "main": "express-angular.js",
   "scripts": {
     "clean": "rimraf public/node_modules",
-    "build": "copy-node-modules . ./public",
-    "test": "echo 'Error: no test specified' && exit 1"
+	"copy-lib": "copyfiles -f node_modules/angular/angular.min.js node_modules/angular-route/angular-route.min.js public/lib",
+	"copy-css": "copyfiles -f node_modules/bootstrap/dist/css/bootstrap.css node_modules/font-awesome/css/font-awesome.css public/css",
+	"copy-fonts": "copyfiles -f node_modules/bootstrap/dist/css/bootstrap.css node_modules/font-awesome/fonts/* public/fonts",
+    "build": "npm run copy-lib && npm run copy-css && npm run copy-fonts",
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "node express-angular.js"
   },
   "author": "",
   "license": "ISC",
